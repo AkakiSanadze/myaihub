@@ -205,9 +205,9 @@ h1 {
 }
 
 @media (max-width: 480px) {
-    .tools-grid {
-        grid-template-columns: 1fr;
-    }
+.tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
 
     .theme-switch {
         top: 10px;
@@ -215,4 +215,4 @@ h1 {
         width: 35px;
         height: 35px;
     }
-} 
+}
