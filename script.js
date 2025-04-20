@@ -71,4 +71,136 @@ document.addEventListener('DOMContentLoaded', () => {
             img.src = placeholderIcon;
         }
     });
-}); 
+
+    // --- Favorites Functionality ---
+    const toolsContainer = document.getElementById('tools-container');
+    const favoritesSection = document.getElementById('favorites-section');
+    const favoritesGrid = document.getElementById('favorites-grid');
+    const noFavoritesMessage = document.getElementById('no-favorites-message');
+    const allToolCards = document.querySelectorAll('.tool-card'); // Get all cards initially
+
+    const FAVORITES_KEY = 'aiHubFavorites';
+
+    // Function to get favorites from localStorage
+    function getFavorites() {
+        const favorites = localStorage.getItem(FAVORITES_KEY);
+        return favorites ? JSON.parse(favorites) : [];
+    }
+
+    // Function to save favorites to localStorage
+    function saveFavorites(favorites) {
+        localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+    }
+
+    // Function to generate a simple ID from text (like tool name or href)
+    function generateToolId(text) {
+        return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    }
+
+    // Function to update the UI based on current favorites
+    function updateFavoritesUI() {
+        const favorites = getFavorites();
+        favoritesGrid.innerHTML = ''; // Clear current favorites grid
+
+        // Reset all favorite buttons first
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.textContent = '☆'; // Empty star
+            btn.classList.remove('active');
+            btn.setAttribute('aria-label', 'Add to favorites');
+        });
+
+        if (favorites.length === 0) {
+            favoritesSection.style.display = 'none'; // Hide section if no favorites
+            noFavoritesMessage.style.display = 'block'; // Show 'no favorites' message (though section is hidden)
+        } else {
+            favoritesSection.style.display = 'block'; // Show section
+            noFavoritesMessage.style.display = 'none'; // Hide 'no favorites' message
+
+            favorites.forEach(toolId => {
+                const originalCard = document.querySelector(`.tool-card[data-tool-id="${toolId}"]`);
+                if (originalCard) {
+                    // Clone the card for the favorites section
+                    const clonedCard = originalCard.cloneNode(true);
+                    // Ensure the cloned button also reflects the active state
+                    const clonedBtn = clonedCard.querySelector('.favorite-btn');
+                    if (clonedBtn) {
+                        clonedBtn.textContent = '★'; // Filled star
+                        clonedBtn.classList.add('active');
+                        clonedBtn.setAttribute('aria-label', 'Remove from favorites');
+                    }
+                    favoritesGrid.appendChild(clonedCard);
+
+                    // Update the original card's button state as well
+                    const originalBtn = originalCard.querySelector('.favorite-btn');
+                    if (originalBtn) {
+                         originalBtn.textContent = '★'; // Filled star
+                         originalBtn.classList.add('active');
+                         originalBtn.setAttribute('aria-label', 'Remove from favorites');
+                    }
+                }
+            });
+        }
+    }
+
+    // Function to toggle a favorite
+    function toggleFavorite(toolId) {
+        let favorites = getFavorites();
+        const index = favorites.indexOf(toolId);
+
+        if (index > -1) {
+            favorites.splice(index, 1); // Remove from favorites
+        } else {
+            favorites.push(toolId); // Add to favorites
+        }
+
+        saveFavorites(favorites);
+        updateFavoritesUI();
+    }
+
+    // --- Initialization ---
+
+    // 1. Add favorite buttons and data-tool-id to all cards
+    allToolCards.forEach(card => {
+        // Generate an ID if it doesn't exist (using href as a base)
+        if (!card.dataset.toolId) {
+            const toolNameElement = card.querySelector('.tool-name');
+            const idBase = toolNameElement ? toolNameElement.textContent : card.href;
+             if (idBase) {
+                 card.dataset.toolId = generateToolId(idBase);
+             }
+        }
+
+        // Add favorite button if it doesn't exist
+        if (!card.querySelector('.favorite-btn')) {
+            const favButton = document.createElement('button');
+            favButton.className = 'favorite-btn';
+            favButton.setAttribute('aria-label', 'Add to favorites');
+            favButton.innerHTML = '☆'; // Default empty star
+            // Insert button before the image or as the first child if no image
+            const img = card.querySelector('.tool-logo');
+            if (img) {
+                card.insertBefore(favButton, img);
+            } else {
+                card.prepend(favButton);
+            }
+        }
+    });
+
+    // 2. Add event listener using delegation
+    toolsContainer.addEventListener('click', (event) => {
+        // Check if the clicked element is a favorite button
+        if (event.target.classList.contains('favorite-btn')) {
+            event.preventDefault(); // Prevent the link navigation if clicking the button
+            event.stopPropagation(); // Stop the event from bubbling further
+
+            const toolCard = event.target.closest('.tool-card');
+            if (toolCard && toolCard.dataset.toolId) {
+                toggleFavorite(toolCard.dataset.toolId);
+            }
+        }
+    });
+
+    // 3. Initial load of favorites
+    updateFavoritesUI();
+
+});

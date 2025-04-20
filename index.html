@@ -46,7 +46,19 @@
 
         <div id="tools-container">
 
-                <!-- Large Language Models -->
+            <!-- My Favorites Section -->
+            <div class="category-section" id="favorites-section" style="display: none;"> <!-- Initially hidden -->
+                <h2 class="category-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    My Favorites
+                </h2>
+                <div class="tools-grid" id="favorites-grid">
+                    <!-- Favorite tools will be added here by JavaScript -->
+                    <p id="no-favorites-message" style="display: none;">You haven't added any favorites yet. Click the star icon on a tool to add it here.</p>
+                </div>
+            </div>
+
+            <!-- Large Language Models -->
                 <div class="category-section">
                     <h2 class="category-title">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -56,7 +68,8 @@
                     </h2>
                 </h2>
                 <div class="tools-grid">
-                    <a href="https://chat.openai.com" target="_blank" class="tool-card">
+                    <a href="https://chat.openai.com" target="_blank" class="tool-card" data-tool-id="chatgpt">
+                        <button class="favorite-btn" aria-label="Add to favorites">☆</button>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="tool-logo">
                         <h3 class="tool-name">ChatGPT</h3>
                     </a>
@@ -144,6 +157,10 @@
                     <a href="https://vercel.com" target="_blank" class="tool-card">
                         <img src="/api/placeholder/64/64" alt="Vercel" class="tool-logo">
                         <h3 class="tool-name">Vercel</h3>
+                    </a>
+                    <a href="https://deepmind.google/" target="_blank" class="tool-card">
+                        <img src="/api/placeholder/64/64" alt="DeepMind" class="tool-logo">
+                        <h3 class="tool-name">DeepMind</h3>
                     </a>
                     <a href="https://studio.firebase.google.com/u/0/" target="_blank" class="tool-card">
                         <img src="/api/placeholder/64/64" alt="Firebase Studio" class="tool-logo">

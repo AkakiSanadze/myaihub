@@ -164,6 +164,56 @@ h1 {
     }
 }
 
+/* Favorite Button Styles */
+.tool-card {
+    position: relative; /* Needed for absolute positioning of the button */
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem; /* Adjust size as needed */
+    cursor: pointer;
+    color: var(--text-color); /* Default star color */
+    opacity: 0.5; /* Make it slightly transparent by default */
+    transition: color var(--transition-speed), opacity var(--transition-speed), transform var(--transition-speed);
+    padding: 0;
+    line-height: 1;
+}
+
+.favorite-btn:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.favorite-btn.active {
+    color: #FFCC00; /* Gold color for active star */
+    opacity: 1;
+}
+
+/* Favorites Section Styles */
+#favorites-section {
+    border-bottom: 1px solid var(--shadow-color); /* Optional: Add a separator */
+    padding-bottom: 20px; /* Add some spacing below the title */
+}
+
+#favorites-section .category-title svg {
+    color: #FFCC00; /* Match active star color */
+}
+
+#no-favorites-message {
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.7;
+    padding: 20px;
+    grid-column: 1 / -1; /* Make it span the full grid width if grid is active */
+}
+
+
 @media (max-width: 768px) {
     body {
         padding: 10px;
