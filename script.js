@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update footer year
     const currentYear = new Date().getFullYear();
-    const footerText = document.querySelector('footer p');
-    if (footerText) {
-        footerText.innerHTML = `&copy; ${currentYear} AI Hub Directory | A curated collection of the best AI services`;
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = currentYear;
     }
 
     // Favicon loading
@@ -186,8 +186,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 2. Add event listener using delegation
-    toolsContainer.addEventListener('click', (event) => {
+    // 2. Add event listener using delegation to the entire container
+    // This ensures it works for all cards including Recently Added section and Favorites
+    document.querySelector('.container').addEventListener('click', (event) => {
         // Check if the clicked element is a favorite button
         if (event.target.classList.contains('favorite-btn')) {
             event.preventDefault(); // Prevent the link navigation if clicking the button
@@ -203,4 +204,232 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Initial load of favorites
     updateFavoritesUI();
 
+    // --- Handle new tools and recently added section ---
+    // Function to find new tools and return info about them
+    function findNewTools() {
+        const NEW_DAYS = 14; // Tools added within the last 14 days are considered new
+        const today = new Date();
+        
+        // Get all tool cards
+        const allTools = document.querySelectorAll('.tool-card');
+        const recentlyAddedTools = [];
+        
+        allTools.forEach(tool => {
+            // Get the date when the tool was added (from data-added attribute)
+            const addedDateStr = tool.getAttribute('data-added');
+            
+            // If the tool has a data-added attribute
+            if (addedDateStr) {
+                const addedDate = new Date(addedDateStr);
+                const diffTime = Math.abs(today - addedDate);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                
+                // If the tool was added within the last NEW_DAYS days
+                if (diffDays <= NEW_DAYS) {
+                    // Remember this tool for badges and the recently added section
+                    recentlyAddedTools.push({ 
+                        element: tool, 
+                        date: addedDate 
+                    });
+                }
+            }
+        });
+        
+        return recentlyAddedTools;
+    }
+    
+    // Function to add NEW badges to recently added tools
+    function addNewBadgesToTools(newTools) {
+        newTools.forEach(toolInfo => {
+            // Add a NEW badge to the tool if it doesn't already have one
+            if (!toolInfo.element.querySelector('.new-tool-badge')) {
+                const badge = document.createElement('span');
+                badge.className = 'new-tool-badge';
+                badge.textContent = 'NEW';
+                toolInfo.element.appendChild(badge);
+            }
+        });
+    }
+    
+    // Function to create the Recently Added section
+    function createRecentlyAddedSection(newTools) {
+        // If we have recently added tools
+        if (newTools.length > 0) {
+            // Sort tools by date (newest first)
+            const sortedTools = [...newTools].sort((a, b) => b.date - a.date);
+            
+            // Create the Recently Added section
+            const recentlyAddedSection = document.createElement('div');
+            recentlyAddedSection.className = 'category-section';
+            recentlyAddedSection.id = 'recently-added-section';
+            
+            // Create the section title
+            const titleHTML = `
+                <h2 class="category-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    Recently Added
+                </h2>
+            `;
+            recentlyAddedSection.innerHTML = titleHTML;
+            
+            // Create the grid to hold the tools
+            const grid = document.createElement('div');
+            grid.className = 'tools-grid';
+            
+            // Add the recently added tools to the grid (clone them)
+            sortedTools.forEach(toolInfo => {
+                const clone = toolInfo.element.cloneNode(true);
+                grid.appendChild(clone);
+            });
+            
+            // Add the grid to the section
+            recentlyAddedSection.appendChild(grid);
+            
+            // Add the section to the page (after the search container)
+            const toolsContainer = document.getElementById('tools-container');
+            const container = document.querySelector('.container');
+            if (toolsContainer && container) {
+                container.insertBefore(recentlyAddedSection, toolsContainer);
+            }
+        }
+    }
+    
+    // --- Main initialization for all features ---
+    // Wait for the page to be fully loaded
+    window.addEventListener('load', function() {
+        console.log('Window fully loaded - initializing all features');
+        
+        // Initialize new tools functionality
+        const newTools = findNewTools();
+        addNewBadgesToTools(newTools);
+        createRecentlyAddedSection(newTools);
+        
+        // Initialize search functionality
+        
+        // Get the search input element
+        const searchInput = document.getElementById('search-input');
+        
+        // Cache all tool cards and categories for better performance
+        const allTools = Array.from(document.querySelectorAll('.tool-card'));
+        const allCategories = Array.from(document.querySelectorAll('.category-section'));
+        
+        // Added for no-results notification
+        let noResultsNotice = document.createElement('div');
+        noResultsNotice.id = 'no-results-notice';
+        noResultsNotice.style.display = 'none';
+        noResultsNotice.style.textAlign = 'center';
+        noResultsNotice.style.padding = '20px';
+        noResultsNotice.style.margin = '20px auto';
+        noResultsNotice.style.color = 'var(--text-color)';
+        noResultsNotice.style.backgroundColor = 'var(--card-background)';
+        noResultsNotice.style.borderRadius = '12px';
+        noResultsNotice.style.boxShadow = '0 2px 10px var(--shadow-color)';
+        noResultsNotice.style.maxWidth = '600px';
+        noResultsNotice.textContent = 'No results found. Try a different search term.';
+        document.querySelector('.container').insertBefore(noResultsNotice, document.getElementById('tools-container'));
+        
+        // In-place filter function
+        function filterTools() {
+            // Get the search term and convert to lowercase
+            const term = searchInput.value.trim().toLowerCase();
+            console.log('Filtering for:', term);
+            
+            // If search is empty, show all tools and categories
+            if (!term) {
+                allTools.forEach(tool => tool.style.display = '');
+                allCategories.forEach(category => category.style.display = '');
+                noResultsNotice.style.display = 'none';
+                return;
+            }
+            
+            // Count how many tools match the search term
+            let matchCount = 0;
+            
+            // Filter the tools based on search term
+            allTools.forEach(tool => {
+                // Get all text content from the tool
+                const toolName = tool.querySelector('.tool-name')?.textContent?.toLowerCase() || '';
+                const imgAlt = tool.querySelector('img')?.getAttribute('alt')?.toLowerCase() || '';
+                const href = tool.getAttribute('href')?.toLowerCase() || '';
+                
+                // Special case for searching 'new' - only match tools with the data-added attribute
+                if (term === 'new') {
+                    const isMatch = tool.hasAttribute('data-added');
+                    
+                    // Show or hide the tool
+                    if (isMatch) {
+                        tool.style.display = '';
+                        matchCount++;
+                    } else {
+                        tool.style.display = 'none';
+                    }
+                    return; // Skip the rest of the function for this tool
+                }
+                
+                // Special case for Gemini and other tools that might need exact matching
+                const geminiPattern = /\bgemini\b/i;
+                const isGemini = term.match(geminiPattern) && (toolName.match(geminiPattern) || imgAlt.match(geminiPattern));
+                
+                // For all other searches, check if any content matches the search term
+                // We exclude badge text from the search to avoid false matches
+                const isMatch = 
+                    isGemini || 
+                    toolName.includes(term) || 
+                    imgAlt.includes(term) || 
+                    href.includes(term);
+                
+                // Show or hide the tool
+                if (isMatch) {
+                    tool.style.display = '';
+                    matchCount++;
+                    console.log('Match found:', toolName || imgAlt);
+                } else {
+                    tool.style.display = 'none';
+                }
+            });
+            
+            // For each category, check if it has any visible tools
+            allCategories.forEach(category => {
+                const visibleTools = category.querySelectorAll('.tool-card:not([style*="display: none"])');
+                
+                // Show the category if it has visible tools, otherwise hide it
+                if (visibleTools.length > 0) {
+                    category.style.display = '';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+            
+            // Show or hide the no-results message
+            if (matchCount === 0) {
+                noResultsNotice.style.display = 'block';
+            } else {
+                noResultsNotice.style.display = 'none';
+            }
+            
+            console.log(`Found ${matchCount} matches out of ${allTools.length} tools`);
+        }
+        
+        // Set up event listeners
+        
+        if (searchInput) {
+            // Search on Enter key
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    filterTools();
+                }
+            });
+            
+            // Live search with debounce
+            let debounceTimer;
+            searchInput.addEventListener('input', function() {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(filterTools, 300);
+            });
+        }
+        
+        console.log('In-place filter functionality initialized successfully');
+    });
 });

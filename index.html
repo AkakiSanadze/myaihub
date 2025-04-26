@@ -43,6 +43,16 @@
             </div>
             <p class="subtitle">A curated collection of the best artificial intelligence tools and services available today.</p>
         </header>
+        
+        <!-- Search Bar (moved outside header) -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search across all categories..." aria-label="Search tools">
+            <button id="search-button" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+        </div>
+        
+        <!-- No search results section needed - filtering happens in place -->
 
         <div id="tools-container">
 
@@ -66,15 +76,14 @@
                         </svg>
                         Large Language Models
                     </h2>
-                </h2>
                 <div class="tools-grid">
                     <a href="https://chat.openai.com" target="_blank" class="tool-card" data-tool-id="chatgpt">
                         <button class="favorite-btn" aria-label="Add to favorites">☆</button>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="tool-logo">
+                        <img src="/api/placeholder/64/64" alt="ChatGPT" class="tool-logo">
                         <h3 class="tool-name">ChatGPT</h3>
                     </a>
                     <a href="https://claude.ai" target="_blank" class="tool-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Claude_Wordmark_Black.svg/640px-Claude_Wordmark_Black.svg.png" alt="Claude" class="tool-logo">
+                        <img src="/api/placeholder/64/64" alt="Claude" class="tool-logo">
                         <h3 class="tool-name">Claude</h3>
                     </a>
                     <a href="https://gemini.google.com" target="_blank" class="tool-card">
@@ -341,6 +350,10 @@
                         <img src="/api/placeholder/64/64" alt="Pinokio Computer" class="tool-logo">
                         <h3 class="tool-name">Pinokio Computer</h3>
                     </a>
+                    <a href="https://www.trae.ai/" target="_blank" class="tool-card" data-added="2025-04-22">
+                        <img src="/api/placeholder/64/64" alt="Trae" class="tool-logo">
+                        <h3 class="tool-name">Trae</h3>
+                    </a>
                 </div>
             </div>
 
@@ -377,8 +390,8 @@
                         <img src="/api/placeholder/64/64" alt="Midjourney" class="tool-logo">
                         <h3 class="tool-name">Midjourney</h3>
                     </a>
-                    <a href="https://www.wan-ai.org/home" target="_blank" class="tool-card">
-                        <img src="/api/placeholder/64/64" alt="Wan" class="tool-logo">
+                    <a href="https://wan.video/" target="_blank" class="tool-card">
+                        <img src="/api/placeholder/64/64" alt="Wan AI" class="tool-logo">
                         <h3 class="tool-name">Wan AI</h3>
                     </a>
                     <a href="https://pixlr.com/" target="_blank" class="tool-card">
@@ -460,7 +473,7 @@
                         <h3 class="tool-name">Recraft</h3>
                     </a>
                     <a href="https://elevenreader.io/" target="_blank" class="tool-card">
-                        <img src="https://elevenreader.io/favicon.ico" alt="ElevenReader" class="tool-logo">
+                        <img src="/api/placeholder/64/64" alt="ElevenReader" class="tool-logo">
                         <h3 class="tool-name">ElevenReader</h3>
                     </a>
                     <a href="https://interiorai.com/" target="_blank" class="tool-card">
@@ -502,9 +515,31 @@
                 </div>
             </div>
 
+            <!-- AI Directory Sites -->
+            <div class="category-section">
+                <h2 class="category-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    AI Directory Sites
+                </h2>
+                <div class="tools-grid">
+                    <a href="https://www.toolify.ai/" target="_blank" class="tool-card" data-added="2025-04-25">
+                        <img src="/api/placeholder/64/64" alt="Toolify AI" class="tool-logo">
+                        <h3 class="tool-name">Toolify AI</h3>
+                    </a>
+                    <a href="https://www.aixploria.com/en/" target="_blank" class="tool-card" data-added="2025-04-26">
+                        <img src="/api/placeholder/64/64" alt="AIxploria" class="tool-logo">
+                        <h3 class="tool-name">AIxploria</h3>
+                    </a>
+                    <a href="https://www.whalesync.com/tools/ai-directory" target="_blank" class="tool-card" data-added="2025-04-24">
+                        <img src="/api/placeholder/64/64" alt="Whalesync AI Directory" class="tool-logo">
+                        <h3 class="tool-name">Whalesync AI Directory</h3>
+                    </a>
+                </div>
+            </div>
+
         <footer>
 
-    <p style="text-align: center;">&copy; <span id="current-year"></span> My AI Hub| A curated collection of the best AI services</p>
+    <p style="text-align: center;">&copy; <span id="current-year"></span> My AI Hub | A curated collection of the best AI services</p>
 
         </footer>
     </div>
