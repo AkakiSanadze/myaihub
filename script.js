@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Favicon loading
     const toolCards = document.querySelectorAll('.tool-card');
-    const placeholderIcon = '/api/placeholder/64/64';
+    const placeholderIcon = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" fill="%23d0d0d0"/></svg>';
 
     toolCards.forEach(card => {
         const link = card.href;
@@ -116,33 +116,26 @@ document.addEventListener('DOMContentLoaded', () => {
             favoritesSection.style.display = 'block'; // Show section
             noFavoritesMessage.style.display = 'none'; // Hide 'no favorites' message
 
-            // Use a Set to ensure unique tool IDs
-            const uniqueFavorites = [...new Set(favorites)];
-            
-            uniqueFavorites.forEach(toolId => {
+            favorites.forEach(toolId => {
                 const originalCard = document.querySelector(`.tool-card[data-tool-id="${toolId}"]`);
                 if (originalCard) {
-                    // Check if this card is already in favorites grid
-                    const existingCard = favoritesGrid.querySelector(`.tool-card[data-tool-id="${toolId}"]`);
-                    if (!existingCard) {
-                        // Clone the card for the favorites section
-                        const clonedCard = originalCard.cloneNode(true);
-                        // Ensure the cloned button also reflects the active state
-                        const clonedBtn = clonedCard.querySelector('.favorite-btn');
-                        if (clonedBtn) {
-                            clonedBtn.textContent = '★'; // Filled star
-                            clonedBtn.classList.add('active');
-                            clonedBtn.setAttribute('aria-label', 'Remove from favorites');
-                        }
-                        favoritesGrid.appendChild(clonedCard);
+                    // Clone the card for the favorites section
+                    const clonedCard = originalCard.cloneNode(true);
+                    // Ensure the cloned button also reflects the active state
+                    const clonedBtn = clonedCard.querySelector('.favorite-btn');
+                    if (clonedBtn) {
+                        clonedBtn.textContent = '★'; // Filled star
+                        clonedBtn.classList.add('active');
+                        clonedBtn.setAttribute('aria-label', 'Remove from favorites');
                     }
+                    favoritesGrid.appendChild(clonedCard);
 
-                    // Update the original card's button state
+                    // Update the original card's button state as well
                     const originalBtn = originalCard.querySelector('.favorite-btn');
                     if (originalBtn) {
-                        originalBtn.textContent = '★'; // Filled star
-                        originalBtn.classList.add('active');
-                        originalBtn.setAttribute('aria-label', 'Remove from favorites');
+                         originalBtn.textContent = '★'; // Filled star
+                         originalBtn.classList.add('active');
+                         originalBtn.setAttribute('aria-label', 'Remove from favorites');
                     }
                 }
             });
@@ -260,14 +253,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Function to create the Recently Added section
     function createRecentlyAddedSection(newTools) {
-        // Remove any existing recently added section first
-        const existingSection = document.getElementById('recently-added-section');
-        if (existingSection) {
-            existingSection.remove();
-        }
-
         // If we have recently added tools
         if (newTools.length > 0) {
+            // Remove any existing Recently Added section first
+            const existingSection = document.getElementById('recently-added-section');
+            if (existingSection) {
+                existingSection.remove();
+            }
+            
             // Sort tools by date (newest first)
             const sortedTools = [...newTools].sort((a, b) => b.date - a.date);
             
@@ -291,16 +284,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const grid = document.createElement('div');
             grid.className = 'tools-grid';
             
-            // Use a Set to track added tool IDs to prevent duplicates
+            // Create a Set to track tools we've already added to avoid duplicates
             const addedToolIds = new Set();
             
             // Add the recently added tools to the grid (clone them)
             sortedTools.forEach(toolInfo => {
                 const toolId = toolInfo.element.dataset.toolId;
-                if (toolId && !addedToolIds.has(toolId)) {
+                
+                // Only add the tool if we haven't added it yet
+                if (!addedToolIds.has(toolId)) {
                     const clone = toolInfo.element.cloneNode(true);
                     grid.appendChild(clone);
-                    addedToolIds.add(toolId);
+                    
+                    // Track that we've added this tool
+                    if (toolId) {
+                        addedToolIds.add(toolId);
+                    }
                 }
             });
             

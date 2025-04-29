@@ -19,6 +19,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-display: swap;
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
@@ -315,10 +316,11 @@ h1 {
 }
 
 /* Font display optimization */
-@font-face {
-    font-family: system-ui;
-    font-display: swap;
-}
+/* 
+Instead of an incomplete @font-face rule, we're relying on the system font stack
+already defined in the body. The previous rule was causing validation errors 
+because it was missing the required 'src' property.
+*/
 
 @media (max-width: 768px) {
     body {
