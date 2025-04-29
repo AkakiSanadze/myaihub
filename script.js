@@ -116,26 +116,33 @@ document.addEventListener('DOMContentLoaded', () => {
             favoritesSection.style.display = 'block'; // Show section
             noFavoritesMessage.style.display = 'none'; // Hide 'no favorites' message
 
-            favorites.forEach(toolId => {
+            // Use a Set to ensure unique tool IDs
+            const uniqueFavorites = [...new Set(favorites)];
+            
+            uniqueFavorites.forEach(toolId => {
                 const originalCard = document.querySelector(`.tool-card[data-tool-id="${toolId}"]`);
                 if (originalCard) {
-                    // Clone the card for the favorites section
-                    const clonedCard = originalCard.cloneNode(true);
-                    // Ensure the cloned button also reflects the active state
-                    const clonedBtn = clonedCard.querySelector('.favorite-btn');
-                    if (clonedBtn) {
-                        clonedBtn.textContent = '★'; // Filled star
-                        clonedBtn.classList.add('active');
-                        clonedBtn.setAttribute('aria-label', 'Remove from favorites');
+                    // Check if this card is already in favorites grid
+                    const existingCard = favoritesGrid.querySelector(`.tool-card[data-tool-id="${toolId}"]`);
+                    if (!existingCard) {
+                        // Clone the card for the favorites section
+                        const clonedCard = originalCard.cloneNode(true);
+                        // Ensure the cloned button also reflects the active state
+                        const clonedBtn = clonedCard.querySelector('.favorite-btn');
+                        if (clonedBtn) {
+                            clonedBtn.textContent = '★'; // Filled star
+                            clonedBtn.classList.add('active');
+                            clonedBtn.setAttribute('aria-label', 'Remove from favorites');
+                        }
+                        favoritesGrid.appendChild(clonedCard);
                     }
-                    favoritesGrid.appendChild(clonedCard);
 
-                    // Update the original card's button state as well
+                    // Update the original card's button state
                     const originalBtn = originalCard.querySelector('.favorite-btn');
                     if (originalBtn) {
-                         originalBtn.textContent = '★'; // Filled star
-                         originalBtn.classList.add('active');
-                         originalBtn.setAttribute('aria-label', 'Remove from favorites');
+                        originalBtn.textContent = '★'; // Filled star
+                        originalBtn.classList.add('active');
+                        originalBtn.setAttribute('aria-label', 'Remove from favorites');
                     }
                 }
             });
@@ -253,6 +260,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Function to create the Recently Added section
     function createRecentlyAddedSection(newTools) {
+        // Remove any existing recently added section first
+        const existingSection = document.getElementById('recently-added-section');
+        if (existingSection) {
+            existingSection.remove();
+        }
+
         // If we have recently added tools
         if (newTools.length > 0) {
             // Sort tools by date (newest first)
@@ -278,10 +291,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const grid = document.createElement('div');
             grid.className = 'tools-grid';
             
+            // Use a Set to track added tool IDs to prevent duplicates
+            const addedToolIds = new Set();
+            
             // Add the recently added tools to the grid (clone them)
             sortedTools.forEach(toolInfo => {
-                const clone = toolInfo.element.cloneNode(true);
-                grid.appendChild(clone);
+                const toolId = toolInfo.element.dataset.toolId;
+                if (toolId && !addedToolIds.has(toolId)) {
+                    const clone = toolInfo.element.cloneNode(true);
+                    grid.appendChild(clone);
+                    addedToolIds.add(toolId);
+                }
             });
             
             // Add the grid to the section
