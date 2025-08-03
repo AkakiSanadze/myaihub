@@ -20,13 +20,13 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="My AI Hub">
-    <meta name="twitter:description" content="A curated collection of the best artificial intelligence tools and services available today.">
+    <meta property="og:description" content="A curated collection of the best artificial intelligence tools and services available today.">
     <link rel="icon" type="image/png" sizes="16x16" href="images/fevicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/fevicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/fevicon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="images/fevicon-192x192.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="styles.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <button class="theme-switch" onclick="toggleTheme()">
@@ -68,472 +68,195 @@
                 </div>
             </div>
 
-            <!-- Large Language Models -->
-                <div class="category-section">
-                    <h2 class="category-title">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                        </svg>
-                        Large Language Models
-                    </h2>
-                <div class="tools-grid">
-                    <a href="https://chat.openai.com" target="_blank" class="tool-card" data-tool-id="chatgpt">
-                        <button class="favorite-btn" aria-label="Add to favorites">☆</button>
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="ChatGPT" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">ChatGPT</h3>
-                    </a>
-                    <a href="https://claude.ai" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Claude" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Claude</h3>
-                    </a>
-                    <a href="https://gemini.google.com" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Gemini" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Gemini</h3>
-                    </a>
-                    <a href="https://copilot.microsoft.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Copilot" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Copilot</h3>
-                    </a>
-                    <a href="https://www.perplexity.ai" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Perplexity" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Perplexity</h3>
-                    </a>
-                    <a href="https://chat.mistral.ai/chat" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Mistral" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Mistral</h3>
-                    </a>
-                    <a href="https://chat.deepseek.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="DeepSeek" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">DeepSeek</h3>
-                    </a>
-                    <a href="https://chat.qwen.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Qwen" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Qwen</h3>
-                    </a>
-                    <a href="https://grok.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Grok" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Grok</h3>
-                    </a>
-                    <a href="https://notebooklm.google.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="NotebookLM" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">NotebookLM</h3>
-                    </a>
-                    <a href="https://venice.ai/chat" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Venice" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Venice</h3>
-                    </a>
-
-                    <a href="https://studio.ai21.com/v2/chat" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="AI21 Studio" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">AI21 Studio</h3>
-                    </a>
-
-                </div>
-            </div>
-
-              
-
-            <!-- Vibe Coding and Developer Tools -->
+            <!-- Chatbots & Text AI -->
             <div class="category-section">
                 <h2 class="category-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M16 18l6-6-6-6"></path>
-                        <path d="M8 6l-6 6 6 6"></path>
-                    </svg>
-                    Vibe Coding and Developer Tools
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    Chatbots & Text AI
                 </h2>
                 <div class="tools-grid">
-                    <a href="https://code.visualstudio.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="VS Code" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">VS Code</h3>
-                    </a>
-                    <a href="https://github.com/features/copilot" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="GitHub Copilot" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">GitHub Copilot</h3>
-                    </a>
-                    <a href="https://www.docker.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Docker" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Docker</h3>
-                    </a>
-                    <a href="https://replit.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Replit" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Replit</h3>
-                    </a>
-                    <a href="https://huggingface.co" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Hugging Face" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Hugging Face</h3>
-                    </a>
-                    <a href="https://vercel.com" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Vercel" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Vercel</h3>
-                    </a>
-                    <a href="https://deepmind.google/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="DeepMind" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">DeepMind</h3>
-                    </a>
-                    <a href="https://studio.firebase.google.com/u/0/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Firebase Studio" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Firebase Studio</h3>
-                    </a>
-                    <a href="https://aws.amazon.com/ai/services/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="AWS AI Services" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">AWS AI Services</h3>
-                    </a>
-                    <a href="https://aistudio.google.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Google AI Studio" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Google AI Studio</h3>
-                    </a>
-                    <a href="https://www.jetbrains.com/ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="JetBrains AI" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">JetBrains AI</h3>
-                    </a>
-                    <a href="https://www.cursor.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Cursor" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Cursor</h3>
-                    </a>
-                    <a href="https://cursor.directory/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Cursor Directory" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Cursor Directory</h3>
-                    </a>
-                    <a href="https://aws.amazon.com/codewhisperer/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="CodeWhisperer" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">CodeWhisperer</h3>
-                    </a>
-                    <a href="https://ollama.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Ollama" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Ollama</h3>
-                    </a>
-                    <a href="https://lmstudio.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="LM Studio" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">LM Studio</h3>
-                    </a>
-                    <a href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Claude Code Overview" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Claude Code Overview</h3>
-                    </a>
-                    <a href="https://github.com/openai/codex" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="OpenAI Codex" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">OpenAI Codex</h3>
-                    </a>
-                    <a href="https://openrouter.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="OpenRouter" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">OpenRouter</h3>
-                    </a>
-                    <a href="https://n8n.io/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="n8n" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">n8n</h3>
-                    </a>
-                    <a href="https://create.t3.gg/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="T3 Stack" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">T3 Stack</h3>
-                    </a>
-                    <a href="https://cloud.google.com/products/agentspace" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Google Agentspace" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Google Agentspace</h3>
-                    </a>
-                    <a href="https://www.openwebui.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Open WebUI" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Open WebUI</h3>
-                    </a>
-                    <a href="https://zed.dev/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Zed" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Zed</h3>
-                    </a>
-                    <a href="https://v0.dev" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="v0" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">v0</h3>
-                    </a>
-
-                    <a href="https://supabase.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Supabase" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Supabase</h3>
-                    </a>
-
-                    <a href="https://lovable.dev" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Lovable" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Lovable</h3>
-                    </a>
-
-                    <a href="https://www.genspark.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Genspark" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Genspark</h3>
-                    </a>
-                    <a href="https://manus.im/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Manus" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Manus</h3>
-                    </a>
-                    <a href="https://huggingface.co/spaces/enzostvs/deepsite" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="DeepSite" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">DeepSite</h3>
-                    </a>
-
-                    <a href="https://huggingface.co/spaces/victor/deepsite-gallery" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="DeepSite - Gallery" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">DeepSite - Gallery</h3>
-                    </a>
-
-                    <a href="https://bolt.new/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Bolt" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Bolt</h3>
-                    </a>
-                    <a href="https://www.requesty.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Requesty" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Requesty</h3>
-                    </a>
-                    <a href="https://windsurf.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Windsurf" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Windsurf</h3>
-                    </a>
-                    <a href="https://voideditor.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Void Editor" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Void Editor</h3>
-                    </a>
-                    <a href="https://roocode.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="RooCode" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">RooCode</h3>
-                    </a>
-                    <a href="https://cline.bot/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Cline" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Cline</h3>
-                    </a>
-                    <a href="https://groq.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Grok" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Grok</h3>
-                    </a>
-                    <a href="https://abacus.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Abacus AI" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Abacus AI</h3>
-                    </a>
-                    <a href="https://clerk.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Clerk" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Clerk</h3>
-                    </a>
-
-                    <a href="https://www.codeguide.dev/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="CodeGuide" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">CodeGuide</h3>
-                    </a>
-
-                    <a href="https://chatboxai.app/en" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Chatbox" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Chatbox</h3>
-                    </a>
-
-                    <a href="https://aider.chat/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Aider" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Aider</h3>
-                    </a>
-
-                    <a href="https://context7.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Context7" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Context7</h3>
-                    </a>
-
-                    <a href="https://agent-tars.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Agent Tars" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Agent Tars</h3>
-                    </a>
-                    <a href="https://sambanova.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Sambanova" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Sambanova</h3>
-                    </a>
-                    <a href="https://shumerprompt.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Mur Probe" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Shumer Prompt</h3>
-                    </a>
-                    <a href="https://fleek.xyz/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Fleek" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Fleek</h3>
-                    </a>
-                    <a href="https://pinokio.computer/" target="_blank" class="tool-card" data-tool-id="pinokio">
-                        <button class="favorite-btn" aria-label="Add to favorites">☆</button>
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Pinokio Computer" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Pinokio Computer</h3>
-                    </a>
-                    <a href="https://www.trae.ai/" target="_blank" class="tool-card" data-added="2025-04-22">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Trae" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Trae</h3>
-                    </a>
+                    <a href="https://chat.openai.com" target="_blank" class="tool-card" data-tool-id="chatgpt"><button class="favorite-btn" aria-label="Add to favorites">☆</button><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="ChatGPT" class="tool-logo" loading="lazy"><h3 class="tool-name">ChatGPT</h3></a>
+                    <a href="https://gemini.google.com" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Gemini" class="tool-logo" loading="lazy"><h3 class="tool-name">Gemini</h3></a>
+                    <a href="https://claude.ai" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Claude" class="tool-logo" loading="lazy"><h3 class="tool-name">Claude</h3></a>
+                    <a href="https://copilot.microsoft.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Copilot" class="tool-logo" loading="lazy"><h3 class="tool-name">Copilot</h3></a>
+                    <a href="https://www.perplexity.ai" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Perplexity" class="tool-logo" loading="lazy"><h3 class="tool-name">Perplexity</h3></a>
+                    <a href="https://chat.mistral.ai/chat" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Mistral" class="tool-logo" loading="lazy"><h3 class="tool-name">Mistral</h3></a>
+                    <a href="https://grok.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Grok" class="tool-logo" loading="lazy"><h3 class="tool-name">Grok</h3></a>
+                    <a href="https://notebooklm.google.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="NotebookLM" class="tool-logo" loading="lazy"><h3 class="tool-name">NotebookLM</h3></a>
+                    <a href="https://chat.deepseek.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="DeepSeek" class="tool-logo" loading="lazy"><h3 class="tool-name">DeepSeek</h3></a>
+                    <a href="https://www.kimi.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Kimi" class="tool-logo" loading="lazy"><h3 class="tool-name">Kimi</h3></a>
+                    <a href="https://chat.qwen.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Qwen" class="tool-logo" loading="lazy"><h3 class="tool-name">Qwen</h3></a>
+                    <a href="https://studio.ai21.com/v2/chat" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="AI21 Studio" class="tool-logo" loading="lazy"><h3 class="tool-name">AI21 Studio</h3></a>
+                    <a href="https://venice.ai/chat" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Venice" class="tool-logo" loading="lazy"><h3 class="tool-name">Venice</h3></a>
+                    <a href="https://chat.z.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Z.ai Chat" class="tool-logo" loading="lazy"><h3 class="tool-name">Z.ai Chat</h3></a>
                 </div>
             </div>
 
-
-            <!-- Generative AI and Creative Tools -->
-             <div class="category-section">
+            <!-- Code Assistants & IDEs -->
+            <div class="category-section">
                 <h2 class="category-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                        <circle cx="12" cy="12" r="3"></circle>
-                    </svg>
-                    Generative AI and Creative Tools
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.94c1.5 0 2.75 1.25 2.75 2.75S13.5 26.44 12 26.44s-2.75-1.25-2.75-2.75S10.5 20.94 12 20.94z"/><path d="M4 16.54C4 14.03 6.02 12 8.5 12h7c2.48 0 4.5 2.03 4.5 4.5S17.98 21 15.5 21h-7C6.02 21 4 18.97 4 16.54z"/><path d="M12 12V2.5"/></svg>
+                    Code Assistants & IDEs
                 </h2>
+                <div class="tools-grid">
+                    <a href="https://code.visualstudio.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="VS Code" class="tool-logo" loading="lazy"><h3 class="tool-name">VS Code</h3></a>
+                    <a href="https://github.com/features/copilot" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="GitHub Copilot" class="tool-logo" loading="lazy"><h3 class="tool-name">GitHub Copilot</h3></a>
+                    <a href="https://zed.dev/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Zed" class="tool-logo" loading="lazy"><h3 class="tool-name">Zed</h3></a>
+                    <a href="https://www.warp.dev/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Warp" class="tool-logo" loading="lazy"><h3 class="tool-name">Warp</h3></a>
+                    <a href="https://v0.dev" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="v0" class="tool-logo" loading="lazy"><h3 class="tool-name">v0</h3></a>
+                    <a href="https://aider.chat/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Aider" class="tool-logo" loading="lazy"><h3 class="tool-name">Aider</h3></a>
+                    <a href="https://www.cursor.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Cursor" class="tool-logo" loading="lazy"><h3 class="tool-name">Cursor</h3></a>
+                    <a href="https://www.codeguide.dev/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="CodeGuide" class="tool-logo" loading="lazy"><h3 class="tool-name">CodeGuide</h3></a>
+                    <a href="https://lovable.dev" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Lovable" class="tool-logo" loading="lazy"><h3 class="tool-name">Lovable</h3></a>
+                    <a href="https://www.genspark.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Genspark" class="tool-logo" loading="lazy"><h3 class="tool-name">Genspark</h3></a>
+                    <a href="https://manus.im/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Manus" class="tool-logo" loading="lazy"><h3 class="tool-name">Manus</h3></a>
+                    <a href="https://deepsite.site/chat" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="DeepSite Chat" class="tool-logo" loading="lazy"><h3 class="tool-name">DeepSite Chat</h3></a>
+                    <a href="https://a0.dev/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="a0.dev" class="tool-logo" loading="lazy"><h3 class="tool-name">a0.dev</h3></a>
+                    <a href="https://voideditor.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Void Editor" class="tool-logo" loading="lazy"><h3 class="tool-name">Void Editor</h3></a>
+                    <a href="https://roocode.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="RooCode" class="tool-logo" loading="lazy"><h3 class="tool-name">RooCode</h3></a>
+                    <a href="https://github.com/anthropics/claude-code" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Claude Code" class="tool-logo" loading="lazy"><h3 class="tool-name">Claude Code</h3></a>
+                    <a href="https://github.com/google-gemini/gemini-cli" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Gemini CLI" class="tool-logo" loading="lazy"><h3 class="tool-name">Gemini CLI</h3></a>
+                    <a href="https://cline.bot/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Cline" class="tool-logo" loading="lazy"><h3 class="tool-name">Cline</h3></a>
+                </div>
             </div>
 
+            <!-- AI Platforms & APIs -->
+            <div class="category-section">
+                <h2 class="category-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    AI Platforms & APIs
+                </h2>
                 <div class="tools-grid">
-                    <a href="https://sora.com/explore" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Sora" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Sora</h3>
-                    </a>
-                    <a href="https://www.figma.com" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Figma" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Figma</h3>
-                    </a>
-                    <a href="https://www.canva.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Canva" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Canva</h3>
-                    </a>
-                    <a href="https://stability.ai" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Stable Diffusion" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Stable Diffusion</h3>
-                    </a>
-                    <a href="https://www.midjourney.com" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Midjourney" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Midjourney</h3>
-                    </a>
-                    <a href="https://wan.video/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Wan AI" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Wan AI</h3>
-                    </a>
-                    <a href="https://pixlr.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Pixlr" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Pixlr</h3>
-                    </a>
-                    <a href="https://app.runwayml.com/" target="_blank" class="tool-card" data-added="2025-04-29">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Runway ML" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Runway ML</h3>
-                    </a>
-                    <a href="https://mylens.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="My Lens" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">My Lens</h3>
-                    </a>
-                    <a href="https://app.klingai.com/global/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Kling" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Kling</h3>
-                    </a>
-                    <a href="https://www.synthesia.io" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Synthesia" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Synthesia</h3>
-                    </a>
-                    <a href="https://elevenlabs.io" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="ElevenLabs" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">ElevenLabs</h3>
-                    </a>
-                    <a href="https://ai.invideo.io/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="InVideo" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">InVideo</h3>
-                    </a>
-                    <a href="https://mobbin.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Mobbinit" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Mobbinit</h3>
-                    </a>
-                    <a href="https://app.leonardo.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Leonardo" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Leonardo</h3>
-                    </a>
-                    <a href="https://lexica.art/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Lexica" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Lexica</h3>
-                    </a>
-                    <a href="https://suno.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Suno" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Suno</h3>
-                    </a>
-                    <a href="https://mubert.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Mubert" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Mubert</h3>
-                    </a>
-                    <a href="https://www.adcreative.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="AdCreative.ai" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">AdCreative.ai</h3>
-                    </a>
-                    <a href="https://www.krea.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Krea" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Krea</h3>
-                    </a>
-                    <a href="https://flux1.ai/create" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Flux1" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Flux1</h3>
-                    </a>
+                    <a href="https://huggingface.co" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Hugging Face" class="tool-logo" loading="lazy"><h3 class="tool-name">Hugging Face</h3></a>
+                    <a href="https://vercel.com" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Vercel" class="tool-logo" loading="lazy"><h3 class="tool-name">Vercel</h3></a>
+                    <a href="https://aws.amazon.com/ai/services/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="AWS AI Services" class="tool-logo" loading="lazy"><h3 class="tool-name">AWS AI Services</h3></a>
+                    <a href="https://replit.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Replit" class="tool-logo" loading="lazy"><h3 class="tool-name">Replit</h3></a>
+                    <a href="https://supabase.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Supabase" class="tool-logo" loading="lazy"><h3 class="tool-name">Supabase</h3></a>
+                    <a href="https://aistudio.google.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Google AI Studio" class="tool-logo" loading="lazy"><h3 class="tool-name">Google AI Studio</h3></a>
+                    <a href="https://deepmind.google/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="DeepMind" class="tool-logo" loading="lazy"><h3 class="tool-name">DeepMind</h3></a>
+                    <a href="https://n8n.io/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="n8n" class="tool-logo" loading="lazy"><h3 class="tool-name">n8n</h3></a>
+                    <a href="https://create.t3.gg/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="T3 Stack" class="tool-logo" loading="lazy"><h3 class="tool-name">T3 Stack</h3></a>
+                    <a href="https://studio.firebase.google.com/u/0/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Firebase Studio" class="tool-logo" loading="lazy"><h3 class="tool-name">Firebase Studio</h3></a>
+                    <a href="https://www.jetbrains.com/ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="JetBrains AI" class="tool-logo" loading="lazy"><h3 class="tool-name">JetBrains AI</h3></a>
+                    <a href="https://openrouter.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="OpenRouter" class="tool-logo" loading="lazy"><h3 class="tool-name">OpenRouter</h3></a>
+                    <a href="https://clerk.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Clerk" class="tool-logo" loading="lazy"><h3 class="tool-name">Clerk</h3></a>
+                    <a href="https://aws.amazon.com/codewhisperer/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="CodeWhisperer" class="tool-logo" loading="lazy"><h3 class="tool-name">CodeWhisperer</h3></a>
+                    <a href="https://github.com/openai/codex" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="OpenAI Codex" class="tool-logo" loading="lazy"><h3 class="tool-name">OpenAI Codex</h3></a>
+                    <a href="https://cloud.google.com/products/agentspace" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Google Agentspace" class="tool-logo" loading="lazy"><h3 class="tool-name">Google Agentspace</h3></a>
+                    <a href="https://abacus.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Abacus AI" class="tool-logo" loading="lazy"><h3 class="tool-name">Abacus AI</h3></a>
+                    <a href="https://sambanova.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Sambanova" class="tool-logo" loading="lazy"><h3 class="tool-name">Sambanova</h3></a>
+                    <a href="https://stitch.withgoogle.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Google Stitch" class="tool-logo" loading="lazy"><h3 class="tool-name">Google Stitch</h3></a>
+                    <a href="https://rork.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Rork" class="tool-logo" loading="lazy"><h3 class="tool-name">Rork</h3></a>
+                    <a href="https://bolt.new/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Bolt" class="tool-logo" loading="lazy"><h3 class="tool-name">Bolt</h3></a>
+                    <a href="https://www.requesty.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Requesty" class="tool-logo" loading="lazy"><h3 class="tool-name">Requesty</h3></a>
+                    <a href="https://windsurf.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Windsurf" class="tool-logo" loading="lazy"><h3 class="tool-name">Windsurf</h3></a>
+                    <a href="https://context7.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Context7" class="tool-logo" loading="lazy"><h3 class="tool-name">Context7</h3></a>
+                    <a href="https://agent-tars.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Agent Tars" class="tool-logo" loading="lazy"><h3 class="tool-name">Agent Tars</h3></a>
+                    <a href="https://shumerprompt.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Shumer Prompt" class="tool-logo" loading="lazy"><h3 class="tool-name">Shumer Prompt</h3></a>
+                    <a href="https://fleek.xyz/" target="_blank" class="tool-card" data-added="2025-04-22"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Fleek" class="tool-logo" loading="lazy"><h3 class="tool-name">Fleek</h3></a>
+                    <a href="https://www.trae.ai/" target="_blank" class="tool-card" data-added="2025-04-22"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Trae" class="tool-logo" loading="lazy"><h3 class="tool-name">Trae</h3></a>
+                    <a href="https://chatboxai.app/en" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Chatbox" class="tool-logo" loading="lazy"><h3 class="tool-name">Chatbox</h3></a>
+                </div>
+            </div>
 
-                    <a href="https://labs.envato.com/image-gen" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Envato Image Gen" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Envato Image Gen</h3>
-                    </a>
+            <!-- Local & CLI Tools -->
+            <div class="category-section">
+                <h2 class="category-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8a13 13 0 0 1 13 13m5-13a9 9 0 0 1-9 9m9-9a5 5 0 0 1-5 5m5-5a1 1 0 0 1-1 1"></path></svg>
+                    Local & CLI Tools
+                </h2>
+                <div class="tools-grid">
+                    <a href="https://www.docker.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Docker" class="tool-logo" loading="lazy"><h3 class="tool-name">Docker</h3></a>
+                    <a href="https://ollama.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Ollama" class="tool-logo" loading="lazy"><h3 class="tool-name">Ollama</h3></a>
+                    <a href="https://lmstudio.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="LM Studio" class="tool-logo" loading="lazy"><h3 class="tool-name">LM Studio</h3></a>
+                    <a href="https://pinokio.computer/" target="_blank" class="tool-card" data-tool-id="pinokio"><button class="favorite-btn" aria-label="Add to favorites">☆</button><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Pinokio Computer" class="tool-logo" loading="lazy"><h3 class="tool-name">Pinokio Computer</h3></a>
+                    <a href="https://www.openwebui.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Open WebUI" class="tool-logo" loading="lazy"><h3 class="tool-name">Open WebUI</h3></a>
+                </div>
+            </div>
 
-                    <a href="https://gamma.app/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Gamma" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Gamma</h3>
-                    </a>
-                    <a href="https://looka.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Looka" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Looka</h3>
-                    </a>
-                    <a href="https://www.recraft.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Recraft" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Recraft</h3>
-                    </a>
-                    <a href="https://elevenreader.io/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="ElevenReader" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">ElevenReader</h3>
-                    </a>
-                    <a href="https://interiorai.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Interior AI" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Interior AI</h3>
-                    </a>
-                    <a href="https://lumalabs.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Lumalabs" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Lumlabs</h3>
-                    </a>
-                    <a href="https://www.riffusion.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Riffusion" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Riffusion</h3>
-                    </a>
-                    <a href="https://deepmind.google/technologies/veo/veo-2/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Veo-2" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Veo-2</h3>
-                    </a>
-                    <a href="https://speechma.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Speechma" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Speechma</h3>
-                    </a>
+            <!-- Developer Resources -->
+            <div class="category-section">
+                <h2 class="category-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    Developer Resources
+                </h2>
+                <div class="tools-grid">
+                    <a href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Claude Code Overview" class="tool-logo" loading="lazy"><h3 class="tool-name">Claude Code Overview</h3></a>
+                    <a href="https://cursor.directory/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Cursor Directory" class="tool-logo" loading="lazy"><h3 class="tool-name">Cursor Directory</h3></a>
+                    <a href="https://huggingface.co/spaces/victor/deepsite-gallery" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 极
+64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="DeepSite - Gallery" class="tool-logo" loading="lazy"><h3 class="tool-name">DeepSite - Gallery</h3></a>
+                    <a href="https://deepsite.site/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="DeepSite" class="tool-logo" loading="lazy"><h3 class="tool-name">DeepSite</h3></a>
+                </div>
 
-                    <a href="https://www.skyreels.ai/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Skyreels" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Skyreels</h3>
-                    </a>
-                    
-                    <a href="https://promptfolder.com/midjourney-prompt-helper/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Midjourney Prompt Helper" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Midjourney Prompt Helper</h3>
-                    </a> 
-                    <a href="https://thispersondoesnotexist.com/" target="_blank" class="tool-card">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="This Person Does Not Exist" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">This Person Does Not Exist</h3>
-                    </a>
-                    <a href="https://designer.microsoft.com/" target="_blank" class="tool-card" data-added="2025-04-29">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Microsoft Designer" class="tool-logo">
-                        <h3 class="tool-name">Microsoft Designer</h3>
-                    </a>
-                    <a href="https://ideogram.ai/" target="_blank" class="tool-card" data-added="2025-04-29">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Ideogram" class="tool-logo">
-                        <h3 class="tool-name">Ideogram</h3>
-                    </a>
-                    <a href="https://www.capcut.com/" target="_blank" class="tool-card" data-added="2025-04-29">
-                        <img src="/api/placeholder/64/64" alt="CapCut" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">CapCut</h3>
-                    </a>
-                    <a href="https://hailuoai.video/" target="_blank" class="tool-card" data-added="2025-04-29">
-                        <img src="/api/placeholder/64/64" alt="Hailuo AI" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Hailuo AI</h3>
-                    </a>
-                    <a href="https://lensgo.ai/" target="_blank" class="tool-card" data-added="2025-04-29">
-                        <img src="/api/placeholder/64/64" alt="Lensgo" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Lensgo</h3>
-                    </a>
-                    <a href="https://pika.art/" target="_blank" class="tool-card"data-added="2025-04-29">
-                        <img src="/api/placeholder/64/64" alt="Pika Art" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Pika Art</h3>
-                    </a>   
+            <!-- Image & Design -->
+            <div class="category-section">
+                <h2 class="category-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.28 4.72a2.828 2.828 0 1 0-4-4L4.72 16.28a2.828 2.828 0 0 0 0 4L16.28 4.72z"></path><path d="M16 2l4 4"></path><path d="M12 6l4 4"></path><path d="M8 10l4 4"></path><path d="M4 14l4 4"></path></svg>
+                    Image & Design
+                </h2>
+                <div class="tools-grid">
+                    <a href="https://www.midjourney.com" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Midjourney" class="tool-logo" loading="lazy"><h3 class="tool-name">Midjourney</h3></a>
+                    <a href="https://stability.ai" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Stable Diffusion" class="tool-logo" loading="lazy"><h3 class="tool-name">Stable Diffusion</h3></a>
+                    <a href="https://www.figma.com" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Figma" class="tool-logo" loading="lazy"><h3 class="tool-name">Figma</h3></a>
+                    <a href="https://www.canva.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Canva" class="tool-logo" loading="lazy"><h3 class="tool-name">Canva</h3></a>
+                    <a href="https://mobbin.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Mobbinit" class="tool-logo" loading="lazy"><h3 class="tool-name">Mobbinit</h3></a>
+                    <a href="https://app.leonardo.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Leonardo" class="tool-logo" loading="lazy"><h3 class="tool-name">Leonardo</h3></a>
+                    <a href="https://designer.microsoft.com/" target="_blank" class="tool-card" data-added="2025-04-29"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Microsoft Designer" class="tool-logo"><h3 class="tool-name">Microsoft Designer</h3></a>
+                    <a href="https://ideogram.ai/" target="_blank" class="tool-card" data-added="2025-04-29"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Ideogram" class="tool-logo"><h3 class="tool-name">Ideogram</h3></a>
+                    <a href="https://www.recraft.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Recraft" class="tool-logo" loading="lazy"><h3 class="tool-name">Recraft</h3></a>
+                    <a href="https://www.krea.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Krea" class="tool-logo" loading="lazy"><h3 class="tool-name">Krea</h3></a>
+                    <a href="https://looka.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Looka" class="tool-logo" loading="lazy"><h3 class="tool-name">Looka</h3></a>
+                    <a href="https://lexica.art/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Lexica" class="tool-logo" loading="lazy"><h3 class="tool-name">Lexica</h3></a>
+                    <a href="https://pixlr.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Pixlr" class="tool-logo" loading="lazy"><h3 class="tool-name">Pixlr</h3></a>
+                    <a href="https://thispersondoesnotexist.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="This Person Does Not Exist" class="tool-logo" loading="lazy"><h3 class="tool-name">This Person Does Not Exist</h3></a>
+                    <a href="https://mylens.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="My Lens" class="tool-logo" loading="lazy"><h3 class="tool-name">My Lens</h3></a>
+                    <a href="https://flux1.ai/create" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Flux1" class="tool-logo" loading="lazy"><h3 class="tool-name">Flux1</h3></a>
+                    <a href="https://labs.envato.com/image-gen" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Envato Image Gen" class="tool-logo" loading="lazy"><h3 class="tool-name">Envato Image Gen</h3></a>
+                    <a href="https://interiorai.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Interior AI" class="tool-logo" loading="lazy"><h3 class="tool-name">Interior AI</h3></a>
+                    <a href="https://www.magicpatterns.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Magic Patterns" class="tool-logo" loading="lazy"><h3 class="tool-name">Magic Patterns</h3></a>
+                    <a href="https://www.superdesign.dev/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Superdesign" class="tool-logo" loading="lazy"><h3 class="tool-name">Superdesign</h3></a>
+                </div>
+            </div>
+
+            <!-- Video & Audio -->
+            <div class="category-section">
+                <h2 class="category-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                    Video & Audio
+                </h2>
+                <div class="tools-grid">
+                    <a href="https://www.capcut.com/" target="_blank" class="tool-card" data-added="2025-04-29"><img src="/api/placeholder/64/64" alt="CapCut" class="tool-logo" loading="lazy"><h3 class="tool-name">CapCut</h3></a>
+                    <a href="https://sora.com/explore" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Sora" class="tool-logo" loading="lazy"><h3 class="tool-name">Sora</h3></a>
+                    <a href="https://app.runwayml.com/" target="_blank" class="tool-card" data-added="2025-04-29"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Runway ML" class="tool-logo" loading="lazy"><h3 class="tool-name">Runway ML</h3></a>
+                    <a href="https://app.heygen.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="HeyGen" class="tool-logo" loading="lazy"><h3 class="tool-name">HeyGen</h3></a>
+                    <a href="https://elevenlabs.io" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="ElevenLabs" class="tool-logo" loading="lazy"><h3 class="tool-name">ElevenLabs</h3></a>
+                    <a href="https://suno.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Suno" class="tool-logo" loading="lazy"><h3 class="tool-name">Suno</h3></a>
+                    <a href="https://www.synthesia.io" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Synthesia" class="tool-logo" loading="lazy"><h3 class="tool-name">Synthesia</h3></a>
+                    <a href="https://pika.art/" target="_blank" class="tool-card"data-added="2025-04-29"><img src="/api/placeholder/64/64" alt="Pika Art" class="tool-logo" loading="lazy"><h3 class="tool-name">Pika Art</h3></a>
+                    <a href="https://ai.invideo.io/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="InVideo" class="tool-logo" loading="lazy"><h3 class="tool-name">InVideo</h3></a>
+                    <a href="https://app.klingai.com/global/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Kling" class="tool-logo" loading="lazy"><h3 class="tool-name">Kling</h3></a>
+                    <a href="https://lumalabs.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Lumalabs" class="tool-logo" loading="lazy"><h3 class="tool-name">Lumlabs</h3></a>
+                    <a href="https://mubert.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64%' height='64%' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Mubert" class="tool-logo" loading="lazy"><h3 class="tool-name">Mubert</h3></a>
+                    <a href="https://www.riffusion.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Riffusion" class="tool-logo" loading="lazy"><h3 class="tool-name">Riffusion</h3></a>
+                    <a href="https://gemini.google/overview/video-generation/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Gemini Video Generation" class="tool-logo" loading="lazy"><h3 class="tool-name">Gemini Video Generation</h3></a>
+                    <a href="https://wan.video/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Wan AI" class="tool-logo" loading="lazy"><h3 class="tool-name">Wan AI</h3></a>
+                    <a href="https://hailuoai.video/" target="_blank" class="tool-card" data-added="2025-04-29"><img src="/api/placeholder/64/64" alt="Hailuo AI" class="tool-logo" loading="lazy"><h3 class="tool-name">Hailuo AI</h3></a>
+                    <a href="https://lensgo.ai/" target="_blank" class="tool-card" data-added="2025-04-29"><img src="/api/placeholder/64/64" alt="Lensgo" class="tool-logo" loading="lazy"><h3 class="tool-name">Lensgo</h3></a>
+                    <a href="https://speechma.com/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Speechma" class="tool-logo" loading="lazy"><h3 class="tool-name">Speechma</h3></a>
+                    <a href="https://www.skyreels.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Skyreels" class="tool-logo" loading="lazy"><h3 class="tool-name">Skyreels</h3></a>
+                </div>
+            </div>
+
+            <!-- Business & Productivity -->
+            <div class="category-section">
+                <h2 class="category-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    Business & Productivity
+                </h2>
+                <div class="tools-grid">
+                    <a href="https://gamma.app/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Gamma" class="tool-logo" loading="lazy"><h3 class="tool-name">Gamma</h3></a>
+                    <a href="https://www.adcreative.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="AdCreative.ai" class="tool-logo" loading="lazy"><h3 class="tool-name">AdCreative.ai</h3></a>
+                    <a href="https://skywork.ai/" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Skywork" class="tool-logo" loading="lazy"><h3 class="tool-name">Skywork</h3></a>
                 </div>
             </div>
 
@@ -544,28 +267,17 @@
                     AI Directory Sites
                 </h2>
                 <div class="tools-grid">
-                    <a href="https://www.toolify.ai/" target="_blank" class="tool-card" data-added="2025-04-25">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Toolify AI" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Toolify AI</h3>
-                    </a>
-                    <a href="https://www.aixploria.com/en/" target="_blank" class="tool-card" data-added="2025-04-26">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="AIxploria" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">AIxploria</h3>
-                    </a>
-                    <a href="https://www.whalesync.com/tools/ai-directory" target="_blank" class="tool-card" data-added="2025-04-24">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Whalesync AI Directory" class="tool-logo" loading="lazy">
-                        <h3 class="tool-name">Whalesync AI Directory</h3>
-                    </a>
+                    <a href="https://www.toolify.ai/" target="_blank" class="tool-card" data-added="2025-04-25"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Toolify AI" class="tool-logo" loading="lazy"><h3 class="tool-name">Toolify AI</h3></a>
+                    <a href="https://github.com/Shubhamsaboo/awesome-llm-apps?tab=readme-ov-file" target="_blank" class="tool-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Awesome LLM Apps" class="tool-logo" loading="lazy"><h3 class="tool-name">Awesome LLM Apps</h3></a>
+                    <a href="https://www.aixploria.com/en/" target="_blank" class="tool-card" data-added="2025-04-26"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="AIxploria" class="tool-logo" loading="lazy"><h3 class="tool-name">AIxploria</h3></a>
+                    <a href="https://www.whalesync.com/tools/ai-directory" target="_blank" class="tool-card" data-added="2025-04-24"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23d0d0d0'/></svg>" alt="Whalesync AI Directory" class="tool-logo" loading="lazy"><h3 class="tool-name">Whalesync AI Directory</h3></a>
                 </div>
             </div>
-
-        <footer>
-
-    <p style="text-align: center;">&copy; <span id="current-year"></span> My AI Hub | A curated collection of the best AI services</p>
-
-        </footer>
+        </div>
     </div>
-
-    <script src="script.min.js" defer></script>
+    <footer>
+        <p>&copy; <span id="current-year"></span> My AI Hub. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

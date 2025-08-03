@@ -42,32 +42,28 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = currentYear;
     }
 
-    // Favicon loading
+    // Optimized favicon loading with better URL handling
     const toolCards = document.querySelectorAll('.tool-card');
     const placeholderIcon = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" fill="%23d0d0d0"/></svg>';
 
     toolCards.forEach(card => {
-        const link = card.href;
         const img = card.querySelector('.tool-logo');
+        if (!img) return;
 
-        if (link && img && link !== window.location.href + '#') {
-            try {
-                const absoluteLink = new URL(link, window.location.origin).href;
-                const url = new URL(absoluteLink);
-                const domain = url.origin;
-                const faviconUrl = `https://www.google.com/s2/favicons?sz=64&domain_url=${encodeURIComponent(domain)}`;
-                
-                img.src = faviconUrl;
-                
-                img.onerror = function() {
-                    this.onerror = null;
-                    this.src = placeholderIcon;
-                };
-            } catch (e) {
-                console.error(`Failed to process URL: ${link}`, e);
-                img.src = placeholderIcon;
-            }
-        } else if (img) {
+        try {
+            // Use card's resolved href directly
+            const resolvedURL = new URL(card.href);
+            const domain = resolvedURL.origin;
+            const faviconUrl = `https://www.google.com/s2/favicons?sz=64&domain_url=${encodeURIComponent(domain)}`;
+            
+            img.src = faviconUrl;
+            
+            img.onerror = function() {
+                this.onerror = null;
+                this.src = placeholderIcon;
+            };
+        } catch (e) {
+            console.error(`Failed to process URL: ${card.href}`, e);
             img.src = placeholderIcon;
         }
     });
@@ -92,9 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
     }
 
-    // Function to generate a simple ID from text (like tool name or href)
-    function generateToolId(text) {
-        return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    // Generate consistent UUIDs for tools using href
+    function generateToolId(href) {
+        // Create hash from href
+        let hash = 0;
+        for (let i = 0; i < href.length; i++) {
+            const char = href.charCodeAt(i);
+            hash = (hash << 5) - hash + char;
+            hash = hash & hash; // Convert to 32bit integer
+        }
+        return 'tool-' + Math.abs(hash).toString(16);
     }
 
     // Function to update the UI based on current favorites
@@ -161,13 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Add favorite buttons and data-tool-id to all cards
     allToolCards.forEach(card => {
-        // Generate an ID if it doesn't exist (using href as a base)
-        if (!card.dataset.toolId) {
-            const toolNameElement = card.querySelector('.tool-name');
-            const idBase = toolNameElement ? toolNameElement.textContent : card.href;
-             if (idBase) {
-                 card.dataset.toolId = generateToolId(idBase);
-             }
+        // Generate consistent ID based on href
+        if (!card.dataset.toolId && card.href) {
+            card.dataset.toolId = generateToolId(card.href);
         }
 
         // Add favorite button if it doesn't exist
@@ -195,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.stopPropagation(); // Stop the event from bubbling further
 
             const toolCard = event.target.closest('.tool-card');
-            if (toolCard && toolCard.dataset.toolId) {
+            if (toolCard?.dataset?.toolId) {
                 toggleFavorite(toolCard.dataset.toolId);
             }
         }
@@ -325,37 +324,50 @@ document.addEventListener('DOMContentLoaded', () => {
         addNewBadgesToTools(newTools);
         createRecentlyAddedSection(newTools);
         
-        // Initialize search functionality
-        
-        // Get the search input element
+        // Enhanced search functionality
         const searchInput = document.getElementById('search-input');
-        
-        // Cache all tool cards and categories for better performance
         const allTools = Array.from(document.querySelectorAll('.tool-card'));
         const allCategories = Array.from(document.querySelectorAll('.category-section'));
+        const noResultsNotice = document.getElementById('no-results-notice') || document.createElement('div');
         
-        // Added for no-results notification
-        let noResultsNotice = document.createElement('div');
-        noResultsNotice.id = 'no-results-notice';
-        noResultsNotice.style.display = 'none';
-        noResultsNotice.style.textAlign = 'center';
-        noResultsNotice.style.padding = '20px';
-        noResultsNotice.style.margin = '20px auto';
-        noResultsNotice.style.color = 'var(--text-color)';
-        noResultsNotice.style.backgroundColor = 'var(--card-background)';
-        noResultsNotice.style.borderRadius = '12px';
-        noResultsNotice.style.boxShadow = '0 2px 10px var(--shadow-color)';
-        noResultsNotice.style.maxWidth = '600px';
-        noResultsNotice.textContent = 'No results found. Try a different search term.';
-        document.querySelector('.container').insertBefore(noResultsNotice, document.getElementById('tools-container'));
-        
-        // In-place filter function
-        function filterTools() {
-            // Get the search term and convert to lowercase
-            const term = searchInput.value.trim().toLowerCase();
-            console.log('Filtering for:', term);
+        // Prebuild search index
+        const searchIndex = allTools.map(tool => {
+            const name = tool.querySelector('.tool-name')?.textContent?.toLowerCase() || '';
+            const alt = tool.querySelector('img')?.getAttribute('alt')?.toLowerCase() || '';
+            const href = tool.getAttribute('href')?.toLowerCase() || '';
+            const category = tool.closest('.category-section')?.querySelector('.category-title')?.textContent?.toLowerCase() || '';
+            const isNew = tool.hasAttribute('data-added');
             
-            // If search is empty, show all tools and categories
+            return {
+                element: tool,
+                name,
+                alt,
+                href,
+                category,
+                isNew
+            };
+        });
+        
+        // Create no-results notice if it doesn't exist
+        if (!document.getElementById('no-results-notice')) {
+            noResultsNotice.id = 'no-results-notice';
+            noResultsNotice.style.display = 'none';
+            noResultsNotice.style.textAlign = 'center';
+            noResultsNotice.style.padding = '20px';
+            noResultsNotice.style.margin = '20px auto';
+            noResultsNotice.style.color = 'var(--text-color)';
+            noResultsNotice.style.backgroundColor = 'var(--card-background)';
+            noResultsNotice.style.borderRadius = '12px';
+            noResultsNotice.style.boxShadow = '0 2px 10px var(--shadow-color)';
+            noResultsNotice.style.maxWidth = '600px';
+            noResultsNotice.textContent = 'No results found. Try a different search term.';
+            document.querySelector('.container').insertBefore(noResultsNotice, document.getElementById('tools-container'));
+        }
+        
+        function filterTools() {
+            const term = searchInput.value.trim().toLowerCase();
+            
+            // Show all if empty search
             if (!term) {
                 allTools.forEach(tool => tool.style.display = '');
                 allCategories.forEach(category => category.style.display = '');
@@ -363,89 +375,55 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            // Count how many tools match the search term
+            // Reset visibility
+            allTools.forEach(tool => tool.style.display = 'none');
+            allCategories.forEach(category => category.style.display = 'none');
+            
             let matchCount = 0;
             
-            // Filter the tools based on search term
-            allTools.forEach(tool => {
-                // Get all text content from the tool
-                const toolName = tool.querySelector('.tool-name')?.textContent?.toLowerCase() || '';
-                const imgAlt = tool.querySelector('img')?.getAttribute('alt')?.toLowerCase() || '';
-                const href = tool.getAttribute('href')?.toLowerCase() || '';
+            // Search logic
+            searchIndex.forEach(item => {
+                const matchesName = item.name.includes(term);
+                const matchesAlt = item.alt.includes(term);
+                const matchesHref = item.href.includes(term);
+                const matchesCategory = item.category.includes(term);
+                const isNewMatch = term === 'new' && item.isNew;
                 
-                // Special case for searching 'new' - only match tools with the data-added attribute
-                if (term === 'new') {
-                    const isMatch = tool.hasAttribute('data-added');
-                    
-                    // Show or hide the tool
-                    if (isMatch) {
-                        tool.style.display = '';
-                        matchCount++;
-                    } else {
-                        tool.style.display = 'none';
-                    }
-                    return; // Skip the rest of the function for this tool
-                }
-                
-                // Special case for Gemini and other tools that might need exact matching
-                const geminiPattern = /\bgemini\b/i;
-                const isGemini = term.match(geminiPattern) && (toolName.match(geminiPattern) || imgAlt.match(geminiPattern));
-                
-                // For all other searches, check if any content matches the search term
-                // We exclude badge text from the search to avoid false matches
-                const isMatch = 
-                    isGemini || 
-                    toolName.includes(term) || 
-                    imgAlt.includes(term) || 
-                    href.includes(term);
-                
-                // Show or hide the tool
-                if (isMatch) {
-                    tool.style.display = '';
+                if (matchesName || matchesAlt || matchesHref || matchesCategory || isNewMatch) {
+                    item.element.style.display = '';
                     matchCount++;
-                    console.log('Match found:', toolName || imgAlt);
-                } else {
-                    tool.style.display = 'none';
+                    
+                    // Show parent category
+                    const categorySection = item.element.closest('.category-section');
+                    if (categorySection) {
+                        categorySection.style.display = '';
+                    }
                 }
             });
             
-            // For each category, check if it has any visible tools
-            allCategories.forEach(category => {
-                const visibleTools = category.querySelectorAll('.tool-card:not([style*="display: none"])');
-                
-                // Show the category if it has visible tools, otherwise hide it
-                if (visibleTools.length > 0) {
-                    category.style.display = '';
-                } else {
-                    category.style.display = 'none';
-                }
-            });
-            
-            // Show or hide the no-results message
-            if (matchCount === 0) {
-                noResultsNotice.style.display = 'block';
-            } else {
-                noResultsNotice.style.display = 'none';
+            // Show favorites section if it has visible tools
+            const favoritesSection = document.getElementById('favorites-section');
+            if (favoritesSection) {
+                const hasVisibleTools = Array.from(favoritesSection.querySelectorAll('.tool-card'))
+                    .some(tool => tool.style.display !== 'none');
+                favoritesSection.style.display = hasVisibleTools ? 'block' : 'none';
             }
             
-            console.log(`Found ${matchCount} matches out of ${allTools.length} tools`);
+            // Show/hide no results message
+            noResultsNotice.style.display = matchCount > 0 ? 'none' : 'block';
         }
         
         // Set up event listeners
         
         if (searchInput) {
-            // Search on Enter key
-            searchInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    filterTools();
-                }
+            searchInput.addEventListener('input', function() {
+                // Debounce with requestAnimationFrame for smoother performance
+                if (this.timer) cancelAnimationFrame(this.timer);
+                this.timer = requestAnimationFrame(() => filterTools());
             });
             
-            // Live search with debounce
-            let debounceTimer;
-            searchInput.addEventListener('input', function() {
-                clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(filterTools, 300);
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') filterTools();
             });
         }
         
