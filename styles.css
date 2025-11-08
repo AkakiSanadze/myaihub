@@ -213,41 +213,7 @@ h1 {
 #favorites-section {
     border-bottom: 1px solid var(--shadow-color); /* Optional: Add a separator */
     padding-bottom: 20px; /* Add some spacing below the title */
-}
-
-/* New Tool Badge Styles */
-.new-tool-badge {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    background-color: var(--accent-color);
-    color: #fff;
-    font-size: 0.65rem;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: bold;
-    z-index: 1;
-    animation: pulse-badge 1.5s infinite alternate;
-}
-
-@keyframes pulse-badge {
-    0% {
-        background-color: var(--accent-color);
-        transform: scale(1);
-    }
-    50% {
-        background-color: color-mix(in srgb, var(--accent-color) 80%, white);
-        transform: scale(1.1);
-    }
-    100% {
-        background-color: var(--accent-color);
-        transform: scale(1);
-    }
-}
-
-/* Recently Added Section Styles */
-#recently-added-section .category-title svg {
-    color: var(--accent-color);
+    display: none;
 }
 
 /* Search Styles */
@@ -318,6 +284,7 @@ h1 {
     opacity: 0.7;
     padding: 20px;
     grid-column: 1 / -1; /* Make it span the full grid width if grid is active */
+    display: none;
 }
 
 /* Font display optimization */

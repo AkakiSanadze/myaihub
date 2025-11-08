@@ -1,0 +1,24 @@
+{
+  "name": "myaihub",
+  "version": "1.0.0",
+  "description": "Comprehensive AI tools directory hosted on GitHub Pages and Vercel",
+  "main": "index.html",
+  "scripts": {
+    "serve": "python -m http.server 8000",
+    "build": "echo 'Build completed - Ready for deployment'",
+    "deploy:vercel": "echo 'Deploy to Vercel - Use Vercel CLI or GitHub integration'",
+    "deploy:github": "echo 'Deploy to GitHub Pages - Push to gh-pages branch'"
+  },
+  "keywords": ["ai", "tools", "directory", "chatgpt", "claude", "gemini"],
+  "author": "My AI Hub",
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/myaihub"
+  },
+  "homepage": "https://username.github.io/myaihub",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

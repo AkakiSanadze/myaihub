@@ -203,126 +203,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Initial load of favorites
     updateFavoritesUI();
 
-    // --- Handle new tools and recently added section ---
-    // Function to find new tools and return info about them
-    function findNewTools() {
-        const NEW_DAYS = 14; // Tools added within the last 14 days are considered new
-        const today = new Date();
-        
-        // Get all tool cards
-        const allTools = document.querySelectorAll('.tool-card');
-        const recentlyAddedTools = [];
-        
-        allTools.forEach(tool => {
-            // Get the date when the tool was added (from data-added attribute)
-            const addedDateStr = tool.getAttribute('data-added');
-            
-            // If the tool has a data-added attribute
-            if (addedDateStr) {
-                const addedDate = new Date(addedDateStr);
-                const diffTime = Math.abs(today - addedDate);
-                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                
-                // If the tool was added within the last NEW_DAYS days
-                if (diffDays <= NEW_DAYS) {
-                    // Remember this tool for badges and the recently added section
-                    recentlyAddedTools.push({ 
-                        element: tool, 
-                        date: addedDate 
-                    });
-                }
-            }
-        });
-        
-        return recentlyAddedTools;
-    }
-    
-    // Function to add NEW badges to recently added tools
-    function addNewBadgesToTools(newTools) {
-        newTools.forEach(toolInfo => {
-            // Add a NEW badge to the tool if it doesn't already have one
-            if (!toolInfo.element.querySelector('.new-tool-badge')) {
-                const badge = document.createElement('span');
-                badge.className = 'new-tool-badge';
-                badge.textContent = 'NEW';
-                toolInfo.element.appendChild(badge);
-            }
-        });
-    }
-    
-    // Function to create the Recently Added section
-    function createRecentlyAddedSection(newTools) {
-        // If we have recently added tools
-        if (newTools.length > 0) {
-            // Remove any existing Recently Added section first
-            const existingSection = document.getElementById('recently-added-section');
-            if (existingSection) {
-                existingSection.remove();
-            }
-            
-            // Sort tools by date (newest first)
-            const sortedTools = [...newTools].sort((a, b) => b.date - a.date);
-            
-            // Create the Recently Added section
-            const recentlyAddedSection = document.createElement('div');
-            recentlyAddedSection.className = 'category-section';
-            recentlyAddedSection.id = 'recently-added-section';
-            
-            // Create the section title
-            const titleHTML = `
-                <h2 class="category-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                    </svg>
-                    Recently Added
-                </h2>
-            `;
-            recentlyAddedSection.innerHTML = titleHTML;
-            
-            // Create the grid to hold the tools
-            const grid = document.createElement('div');
-            grid.className = 'tools-grid';
-            
-            // Create a Set to track tools we've already added to avoid duplicates
-            const addedToolIds = new Set();
-            
-            // Add the recently added tools to the grid (clone them)
-            sortedTools.forEach(toolInfo => {
-                const toolId = toolInfo.element.dataset.toolId;
-                
-                // Only add the tool if we haven't added it yet
-                if (!addedToolIds.has(toolId)) {
-                    const clone = toolInfo.element.cloneNode(true);
-                    grid.appendChild(clone);
-                    
-                    // Track that we've added this tool
-                    if (toolId) {
-                        addedToolIds.add(toolId);
-                    }
-                }
-            });
-            
-            // Add the grid to the section
-            recentlyAddedSection.appendChild(grid);
-            
-            // Add the section to the page (after the search container)
-            const toolsContainer = document.getElementById('tools-container');
-            const container = document.querySelector('.container');
-            if (toolsContainer && container) {
-                container.insertBefore(recentlyAddedSection, toolsContainer);
-            }
-        }
-    }
-    
     // --- Main initialization for all features ---
     // Wait for the page to be fully loaded
     window.addEventListener('load', function() {
         console.log('Window fully loaded - initializing all features');
-        
-        // Initialize new tools functionality
-        const newTools = findNewTools();
-        addNewBadgesToTools(newTools);
-        createRecentlyAddedSection(newTools);
         
         // Enhanced search functionality
         const searchInput = document.getElementById('search-input');
@@ -336,15 +220,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const alt = tool.querySelector('img')?.getAttribute('alt')?.toLowerCase() || '';
             const href = tool.getAttribute('href')?.toLowerCase() || '';
             const category = tool.closest('.category-section')?.querySelector('.category-title')?.textContent?.toLowerCase() || '';
-            const isNew = tool.hasAttribute('data-added');
             
             return {
                 element: tool,
                 name,
                 alt,
                 href,
-                category,
-                isNew
+                category
             };
         });
         
@@ -387,9 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const matchesAlt = item.alt.includes(term);
                 const matchesHref = item.href.includes(term);
                 const matchesCategory = item.category.includes(term);
-                const isNewMatch = term === 'new' && item.isNew;
                 
-                if (matchesName || matchesAlt || matchesHref || matchesCategory || isNewMatch) {
+                if (matchesName || matchesAlt || matchesHref || matchesCategory) {
                     item.element.style.display = '';
                     matchCount++;
                     
