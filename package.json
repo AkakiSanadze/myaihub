@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "serve": "python -m http.server 8000",
-    "build": "echo 'Build completed - Ready for deployment'",
+    "build": "mkdir -p public && cp index.html styles.css script.js site.webmanifest googlef0c930498af188a5.html public/ && cp -r images public/",
     "deploy:vercel": "echo 'Deploy to Vercel - Use Vercel CLI or GitHub integration'",
     "deploy:github": "echo 'Deploy to GitHub Pages - Push to gh-pages branch'"
   },
