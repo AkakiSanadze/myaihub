@@ -311,7 +311,7 @@ A comprehensive collection of AI tools, platforms, and resources organized by ca
 - **Description:** AI video generation platform
 
 ### Luma Labs (Dream Machine)
-- **URL:** [URL not provided]
+- **URL:** https://dream-machine.lumalabs.ai/
 - **Description:** AI video generation platform
 
 ### Wan
